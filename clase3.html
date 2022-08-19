@@ -43,22 +43,16 @@
         justify-self: center;
         display: none;
       }
-      .tittle {
-        font-size: var(--lg);
-        margin-bottom: 12px;
-        text-align: center;
-      }
-      .subtittle {
-        color: var(--very-light-pink);
-        font-size: var(--mb);
-        font-weight: 300;
-        margin-top: 0;
-        margin-bottom: 32px;
-        text-align: center;
-      }
       .form {
         display: flex;
         flex-direction: column;
+      }
+      .form a {
+        color: var(--hospital-green);
+        font-size: var(--sm);
+        text-align: center;
+        text-decoration: none;
+        margin-bottom: 52px;
       }
       .label {
         font-size: var(--sm);
@@ -74,6 +68,9 @@
         padding: 6px;
         margin-bottom: 12px;
       }
+      .input-email {
+        margin-bottom: 22px;
+      }
       .primary-button {
         background-color: var(--hospital-green);
         border-radius: 8px;
@@ -85,13 +82,29 @@
         font-weight: bold;
         height: 48px;
       }
-      .confirm-button {
+      .secondary-button {
+        background-color: var(--white);
+        border-radius: 8px;
+        border: 1px solid var(--hospital-green);
+        color: var(--hospital-green);
+        width: 100%;
+        cursor: pointer;
+        font-size: var(--mb);
+        font-weight: bold;
+        height: 48px;
+      }
+      .login-button {
         margin-top: 14px;
         margin-bottom: 30px;
       }
       @media (max-width: 700px) {
         .logo {
           display: block;
+        }
+        .secondary-button {
+          position: absolute;
+          bottom: 8px;
+          width: inherit;
         }
       }
     </style>
@@ -100,10 +113,16 @@
     <div class="login">
       <div class="form-container">
         <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo" />
-        <h1 class="tittle">Create a new password</h1>
-        <p class="subtittle">Enter a new password for you account</p>
 
         <form action="" class="form">
+          <label for="email" class="label">Email address</label>
+          <input
+            type="text"
+            id="email"
+            placeholder="email@example.com"
+            class="input input-email"
+          />
+
           <label for="password" class="label">Password</label>
           <input
             type="password"
@@ -112,20 +131,14 @@
             class="input input-password"
           />
 
-          <label for="new-password" class="label">Password</label>
-          <input
-            type="password"
-            id="new-password"
-            placeholder="*********"
-            class="input input-password"
-          />
-
           <input
             type="submit"
-            value="Confirm"
-            class="primary-button confirm-button"
+            value="Log in"
+            class="primary-button login-button"
           />
+          <a href="/">Forgot my password</a> 
         </form>
+        <button class="secondary-button signup-button">Sing up</button>
       </div>
     </div>
   </body>
