@@ -1,1 +1,1 @@
-# practico-frontend-platzi
+# Curso Practico de Frontend by Platzi 💚️
